@@ -13,3 +13,6 @@ Thumbs.db
 
 ## JetBrains IDE configuration files
 .idea/
+
+## Generated files
+tags/*.html
