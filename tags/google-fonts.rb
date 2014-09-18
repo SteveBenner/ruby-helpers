@@ -56,6 +56,7 @@
 #   # Specify exactly which styles of which fonts you need, all in a single convenient Hash
 #   = google_fonts(lato: 100, 'Droid Sans' => :bold, 'Philosopher' => [100, 300, 400])
 #
+# @todo: this feels like tacky code. Redo in a more elegant manner someday
 def google_fonts(*query)
   raise ArgumentError, 'Expected at least one font.' if query.empty?
   if query.first.is_a? Hash
@@ -63,9 +64,9 @@ def google_fonts(*query)
     query = [query.first, query.last.to_enum]
   end
   api_base_url = 'http://fonts.googleapis.com/css'
-  # Iterate through given font families, building the query string from them and given styles
+  # Build query stringby iterating through given font families and styles
   query_string = '?family=' + [*query.first].collect { |family|
-    # Stringify and title-case family name, replacing underscores with spaces
+    # Stringify and title-case family names, replacing underscores with spaces
     family_str = family.to_s.split(/ |_/).map(&:capitalize).join('+')
     # Append any given styles to current font family string
     if query[1]
@@ -76,5 +77,6 @@ def google_fonts(*query)
     end
     family_str
   }.join('|') # [API] families are separated by the pipe character
+  # Return the link tag containing the fully-constructed Google Fonts API query
   %Q[<link rel="stylesheet" type="text/css" href="#{api_base_url + query_string}" />]
 end

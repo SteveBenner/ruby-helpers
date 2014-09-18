@@ -24,13 +24,13 @@ else
 	end
 end
 
-def capture_slim(var, &block)
-	"#{block}"
-	# bl = block.binding.eval "lambda {#{block}\n\tdiv}"
-	# bl.call
-end
-
-def wrap(var, &block)
-	set_var = block.binding
-	set_var.call(yield)
-end
+# def capture_slim(var, &block)
+# 	"#{block}"
+# 	# bl = block.binding.eval "lambda {#{block}\n\tdiv}"
+# 	# bl.call
+# end
+#
+# def wrap(var, &block)
+# 	set_var = block.binding
+# 	set_var.call(yield)
+# end
