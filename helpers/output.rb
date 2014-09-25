@@ -1,4 +1,4 @@
-# Miscellaneous utility functions
+# Helpers for outputting text and other forms of content to be rendered in templates and web pages
 
 # Generates copyright text from a name, using the current year as default date.
 #

@@ -15,4 +15,4 @@ Thumbs.db
 .idea/
 
 ## Generated files
-tags/*.html
+*.html

@@ -1,4 +1,4 @@
-# Slim helpers
+# Functions extending the capabilities of Slim
 
 # Renders a Slim template in logic-less mode, intended to be used from within another Slim template
 # Note: the `dict` parameter is very picky. You can't pass a literal Hash to the function, because
@@ -8,13 +8,14 @@ def llpartial(name, dict, &block)
 	Slim::Template.new("_#{name}.slim", options).render(self, block)
 end
 
+# todo: write a thingy to monkey-patch something to ensure capture(&block) is used in Rails
 if defined? ::Rails
 	# In Rails we have to use capture!
 	# If we are using Slim without a framework (plain Tilt),
 	# you can just yield to get the captured block.
 	def capture_slim(var, &block)
 		set_var = block.binding.eval "lambda {|x| #{var} = x }"
-		set_var.call(defined?(::Rails) ? capture(&block) : yield)
+		set_var.call(defined?(::Rails) ? capture(block) : yield)
 	end
 else
 	# Captures the result of a given Slim block, and stores it into the variable named by given argument

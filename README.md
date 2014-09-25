@@ -1,19 +1,19 @@
 # Ruby Helper Functions
-This is my personal collection of code used for aiding web application development in Ruby. It contains code written by myself, as well as code that I've respectfully copied or modified for my own use, from other open-source projects. In all cases where I am not the original author of a piece of code, the name and email of the author is attributed via YARD documentation.
+This is my personal library of code snippets for use in Ruby web development. Most of it was created by me, but there is also material here from all over the internet. Unless otherwise indicated in the file, I am the author, and I always attribute the authorship and any rights to the proper owners via YARD documentation.
 
 ## Contents
 
-#### Helpers
+### [Helpers](helpers/README.md)
 Assortment of generic helper functions for web development.
 
-#### Middleman
+### [Middleman](middleman/README.md)
 Extensions and plugins for the [Middleman](http://middlemanapp.com/) static website development framework
 
-#### Slim
+### [Slim](slim/README.md)
 Utility functions extending the functionality and/or convenience of Slim templating tasks.
 
-#### Tags
-These functions output an HTML tag to be rendered as part of a template or webpage. 
+### [Tags](tags/README.md)
+These functions output one or more HTML tags to be rendered as part of a template or web page.
 
 
 ---
