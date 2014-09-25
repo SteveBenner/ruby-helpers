@@ -30,7 +30,7 @@
 # @param [Hash] attributes One or more HTML attributes to apply to each HTML element created.
 # @return [String] Output of given Slim block wrapped in HTML tags within IE conditional comments
 #
-# @example For a complete example, refer to {this GitHub gist}.
+# @example For a complete example, refer to {https://gist.github.com/SteveBenner/5df58e30de5165a44822 this GitHub gist}.
 #   doctype html
 #   == conditional_html_tags_for_ie_versions 7..8, lang: 'en'
 #     # ... web page content ...
