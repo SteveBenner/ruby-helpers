@@ -34,3 +34,8 @@ def display_age(birthday)
 	now = Date.today
 	now.year - birthday.year - (Date.new(now.year, birthday.month, birthday.day) > now ? 1 : 0)
 end
+
+# @param [#first, #last, Hash] name An object with individual components of a person's name
+def full_name(name)
+	"#{name.first || name[:first] || name['first']} #{name.last || name[:last] || name['last']}"
+end

@@ -32,7 +32,7 @@
 #
 # @example For a complete example, refer to {https://gist.github.com/SteveBenner/5df58e30de5165a44822 this GitHub gist}.
 #   doctype html
-#   == conditional_html_tags_for_ie_versions 7..8, lang: 'en'
+#   == conditional_html_tags_for_ie_versions 8..10, lang: 'en'
 #     # ... web page content ...
 #
 def conditional_html_tags_for_ie_versions(ie_versions, attributes={})
