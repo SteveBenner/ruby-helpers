@@ -8,6 +8,9 @@ def llpartial(name, dict, &block)
 	Slim::Template.new("_#{name}.slim", options).render(self, block)
 end
 
+# 'Capturing', as it is called in the official docs, is a highly convenient form of inline Slim partials
+# @see https://github.com/slim-template/slim#helpers-capturing-and-includes
+# todo: find a way to remove necessity of declaring the var in the function argument...
 # todo: write a thingy to monkey-patch something to ensure capture(&block) is used in Rails
 if defined? ::Rails
 	# In Rails we have to use capture!
@@ -22,16 +25,21 @@ else
 	def capture(var, &block)
 		set_var = block.binding.eval "lambda {|x| #{var} = x }"
 		set_var.call(yield)
+		'' # Remove this line if you want to actually return the output when called
 	end
 end
 
+# @return [String] Returns given String prefixed with given spaces
+def indent(str, spaces = ' '*2)
+	str.gsub /(^..)/, spaces
+end
+
 # def capture_slim(var, &block)
-# 	"#{block}"
 # 	# bl = block.binding.eval "lambda {#{block}\n\tdiv}"
 # 	# bl.call
 # end
 #
-# def wrap(var, &block)
+# def wrap(&block)
 # 	set_var = block.binding
 # 	set_var.call(yield)
 # end
