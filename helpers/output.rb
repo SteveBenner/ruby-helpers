@@ -13,8 +13,8 @@ end
 # @author Nathan Henderson <nathos@nathos.com>
 # @return [String] Beginning and ending years for a Copyright
 def copyright_from(start_year)
-  end_year = Date.today.year
-  (start_year == end_year) ? start_year.to_s : "#{start_year}-#{end_year}"
+	end_year = Date.today.year
+	(start_year == end_year) ? start_year.to_s : "#{start_year}-#{end_year}"
 end
 
 # @author Fabien Piuzzi <http://demenzia.net/>
@@ -38,4 +38,14 @@ end
 # @param [#first, #last, Hash] name An object with individual components of a person's name
 def full_name(name)
 	"#{name.first || name[:first] || name['first']} #{name.last || name[:last] || name['last']}"
+end
+
+# Generates a Hash from given email address for use in a Gravatar URL according
+# to the procedure documented at: https://en.gravatar.com/site/implement/hash/
+#
+# @param [String] Email address of a Gravater user
+# @return [String] MD5 hash of given email
+#
+def gen_gravater_email_hash(email)
+	Digest::MD5.hexdigest email.strip.downcase
 end
