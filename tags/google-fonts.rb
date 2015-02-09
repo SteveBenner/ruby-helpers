@@ -1,5 +1,3 @@
-
-
 # This tag allows you to load one or more font families into your page via the Google Fonts API
 #
 # @see https://developers.google.com/fonts/ The Web Fonts Project
