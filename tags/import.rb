@@ -23,5 +23,5 @@ require 'pathname'
 # @return [String] HTML tag of the format: <link rel="import" href="#{url}">
 #
 def import(url)
-	%Q[<link rel="import" href="#{url}/#{Pathname(url).sub_ext '.html'}">]
+  %Q[<link rel="import" href="#{url}/#{Pathname(url).sub_ext '.html'}">]
 end
