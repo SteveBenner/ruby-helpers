@@ -60,6 +60,6 @@ def conditional_html_tags_for_ie_versions(ie_versions, attributes={})
     end
     %Q[<!--[if #{version_str}]#{html_tag}<![endif]-->]
   }.flatten * $/
-  # Return the output from given Slim blockm, wrapped in the code for commented HTML tags
+  # Return the output from given Slim block, wrapped in the code for commented HTML tags
   [commented_html_tags, yield, $/, '</html>'].join
 end

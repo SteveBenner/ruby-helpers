@@ -35,11 +35,11 @@ def indent(str, spaces = ' '*2)
 end
 
 # def capture_slim(var, &block)
-# 	# bl = block.binding.eval "lambda {#{block}\n\tdiv}"
-# 	# bl.call
+#   # bl = block.binding.eval "lambda {#{block}\n\tdiv}"
+#   # bl.call
 # end
 #
 # def wrap(&block)
-# 	set_var = block.binding
-# 	set_var.call(yield)
+#   set_var = block.binding
+#   set_var.call(yield)
 # end

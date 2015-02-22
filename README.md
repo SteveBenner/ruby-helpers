@@ -17,4 +17,4 @@ These functions output one or more HTML tags to be rendered as part of a templat
 
 
 ---
-**DISCLAIMER:** Files in this repository may contain code taken from online sources for which I claim neither ownership nor authorship. I will do my best to attribute credit where due, and to supply and adhere to any relevant licenses for such code. If detected, please report improper licensing or usage of any material within this repository by creating an issue.a
+**DISCLAIMER:** Files in this repository may contain code taken from online sources for which I claim neither ownership nor authorship. I will do my best to attribute credit where due, and to supply and adhere to any relevant licenses for such code. If detected, please report improper licensing or usage of any material within this repository by creating an issue.
