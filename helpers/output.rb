@@ -1,20 +1,11 @@
 # Helpers for outputting text and other forms of content to be rendered in templates and web pages
 
-# Generates copyright text from a name, using the current year as default date.
-#
+# Generates copyright text from a name, using the current year as default date (no dependencies!)
 # @param name       [String]  Legal entity which holds the copyright
 # @param start_date [Integer] Begin year for copyright
 # @param end_date   [Integer] End year for copyright
-#
 def copyright(name, start_date=Time.now.year, end_date=Time.now.year)
-  "Copyright © #{start_date}-#{end_date} #{name}. All rights reserved."
-end
-
-# @author Nathan Henderson <nathos@nathos.com>
-# @return [String] Beginning and ending years for a Copyright
-def copyright_from(start_year)
-  end_year = Date.today.year
-  (start_year == end_year) ? start_year.to_s : "#{start_year}-#{end_year}"
+  "Copyright © #{start_date}#{'-' + end_date if end_date != start_date} #{name}. All rights reserved."
 end
 
 # @author Fabien Piuzzi <http://demenzia.net/>
@@ -42,10 +33,8 @@ end
 
 # Generates a Hash from given email address for use in a Gravatar URL according
 # to the procedure documented at: https://en.gravatar.com/site/implement/hash/
-#
-# @param [String] Email address of a Gravater user
-# @return [String] MD5 hash of given email
-#
+# @param email [String] address of a Gravater user
+# @return MD5 [String] hash of given email
 def gen_gravater_email_hash(email)
   Digest::MD5.hexdigest email.strip.downcase
 end
